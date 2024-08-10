@@ -2,16 +2,20 @@
 #include <string.h>
 
 int main () {
-    int a=0;
-    char string [1000];
+    int i, foundA=0, k=0;
+    char string[10000];
+    char output[10000];
     scanf("%s", string);
     int length = strlen(string);
-    for (int i=0;i<length;i++) {
-        if (string[i] == 97) {
-            a++;
+    for(i=0;i<length;i++) {
+        if (string[i]== 'a') {
+            foundA = 1;
         }
-        if (a > 0) {
-            printf("%c", string[i]);
+        if (foundA == 1) {
+            output[k] = string[i];
+            k++;
         }
     }
+    printf("%s", output);
+    return 0;
 }
